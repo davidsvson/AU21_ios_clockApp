@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     
     var timer: Timer?
     
-    let startTime = 6.0
+    let startTime = 60.0
     
     var player1time = 0.0
     var player2time = 0.0
@@ -41,11 +41,11 @@ class ViewController: UIViewController {
         } else {
             startClock()
         }
-        
     }
     
     func switchPlayer() {
         player1active.toggle()
+        updateTime()
     }
     
     func startClock() {
@@ -70,13 +70,13 @@ class ViewController: UIViewController {
         
         updateTimelabel()
         
-        if player2time < 0.1 || player1time < 0.1 {
+        if player2time < 0 || player1time < 0 {
             timer?.invalidate()
         }
     }
     
     func updateTimelabel() {
-        let newTimeString = "\(String(format: "%.2f", player1time))   :   \(String(format: "%.2f", player2time))"
+        let newTimeString = "\(String(format: "%.1f", player1time))   :   \(String(format: "%.1f", player2time))"
         
         timeLabel.text = newTimeString
     }
@@ -85,53 +85,3 @@ class ViewController: UIViewController {
         timer?.invalidate()
     }
 }
-
-
-//class Player {
-//
-//
-//    var timeLeft : Double
-//
-//    init(timeLeft: Double) {
-//        self.timeLeft = timeLeft
-//    }
-//}
-
-
-
-//        var numberString : String?
-//
-//        //version 0 --- GÖR EJ -- KOMMER KRACHA -- KOMMER FÅ DÅLIGA REVIEWS
-//        let number = Int(numberString!)
-//        let bigNumber = number! + 4
-//        print(bigNumber)
-
-//        //version 1
-//        if let numberString = numberString {
-//            if let number = Int(numberString) {
-//                let bigNumber = number + 4
-//                print(bigNumber)
-//            }
-//        }
-
-//        //version 2
-//        if let numberString = numberString,
-//           let number = Int(numberString) {
-//                let bigNumber = number + 4
-//                print(bigNumber)
-//            }
-//        }
-
-//        //version 3
-//        if let number = Int(numberString ?? "") {
-//            let bigNumber = number + 4
-//            print(bigNumber)
-//        }
-
-//        //version 4
-//        guard let numberString = numberString else { return }
-//        guard let number = Int(numberString) else { return }
-//
-//        let bigNumber = number + 4
-//        print(bigNumber)
-

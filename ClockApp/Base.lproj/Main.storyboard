@@ -26,12 +26,21 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="4JH-Aa-nGw" appends="YES" id="ufQ-SS-rax"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="timeLabel" destination="3k3-w9-N2B" id="74e-sI-lXi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="4JH-Aa-nGw">
+                    <connections>
+                        <action selector="onTap:" destination="BYZ-38-t0r" id="RdD-Jw-Kin"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="128.98550724637681" y="93.75"/>
         </scene>

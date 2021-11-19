@@ -66,13 +66,13 @@ class ViewController: UIViewController {
             player2time -= deltaTime
         }
         
-        lastTime = newTime
-        
         updateTimelabel()
         
         if player2time < 0 || player1time < 0 {
             timer?.invalidate()
         }
+        
+        lastTime = newTime
     }
     
     func updateTimelabel() {
